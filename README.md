@@ -29,7 +29,7 @@ Run the analysis using:
 
 ## Data Inspection
 
-The dataset was loaded and inspected using Pandas. 'head()' was used to display the first few rows of the dataset, 'info()' was used to examine the columns, data types, and non-null values, and 'describe()' was used to calculate summary statistics for numerical variables.
+The dataset was loaded and inspected using Pandas. `head()` was used to display the first few rows of the dataset, `info()` was used to examine the columns, data types, and non-null values, and `describe()` was used to calculate summary statistics for numerical variables.
 
 The dataset was also checked for missing values and duplicate rows.
 
@@ -69,6 +69,6 @@ The linear regression experiments found little linear relationship between popul
 
 In addition to Pandas, Polars was used to load and inspect the same Spotify dataset.
 
-The dataset was loaded using 'pl.read_csv()' and the first several rows were inspected using 'head()'. The data was then filtered to identify tracks with a high popularity category.
+The dataset was loaded using `pl.read_csv()` and the first several rows were inspected using `head()`. The data was then filtered to identify tracks with a high popularity category.
 
 The data was also grouped by genre using Polars, and the mean popularity was calculated for each genre and sorted from highest to lowest.
