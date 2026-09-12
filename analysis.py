@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt  # Import Matplotlib
 
 # Inspect the Dataset
 
-df = pd.read_csv("spotify project/data/spotify_artist_streaming_2020_2025.csv")
+df = pd.read_csv("data/spotify_artist_streaming_2020_2025.csv")
 
 print("\nDisplay the first few rows using .head() to get a quick overview:\n")
 print(df.head())
@@ -110,7 +110,7 @@ plt.show()
 
 print("\n\nPolars Analysis\n")
 
-df_polars = pl.read_csv("spotify project/data/spotify_artist_streaming_2020_2025.csv")
+df_polars = pl.read_csv("data/spotify_artist_streaming_2020_2025.csv")
 
 print(df_polars.head())
 
