@@ -21,11 +21,11 @@ The analysis uses the following Python libraries:
 
 Install the required Python packages using:
 
-'pip install -r requirements.txt'
+`pip install -r requirements.txt`
 
 Run the analysis using:
 
-'python analysis.py'
+`python analysis.py`
 
 ## Data Inspection
 
