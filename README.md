@@ -1,5 +1,7 @@
 # Spotify Streaming Data Analysis
 
+[![Python tests](https://github.com/annemariehorn/IDS706-Spotify-Data-Analysis/actions/workflows/test.yml/badge.svg)](https://github.com/annemariehorn/IDS706-Spotify-Data-Analysis/actions/workflows/test.yml)
+
 ## Project Goal
 
 The goal of this project is to explore patterns in a synthetic Spotify streaming dataset using basic data analysis techniques in Python. The analysis focuses on track popularity and its relationship with characteristics such as genre, energy, and danceability.
@@ -105,6 +107,8 @@ python -m pytest -v
 ### Test Results
 
 All tests pass successfully.
+
+![Passing Tests](images/tests-passing.png)
 
 ## Continuous Integration
 
