@@ -3,7 +3,7 @@
 ## Project Goal
 
 The goal of this project is to explore patterns in a synthetic Spotify streaming dataset using basic data analysis techniques in Python. The analysis focuses on track popularity and its relationship with characteristics such as genre, energy, and danceability.
-
+                                                                                         
 ## Dataset
 
 The dataset used in this project is the [**Spotify Artist Streaming Analytics 2020-2025**](https://www.kaggle.com/datasets/beamhonor0911/spotify-artist-streaming-analytics-20202025) dataset from Kaggle. It contains synthetic data for approximately 50,000 tracks from 2020-2025, including information about track characteristics, popularity, streaming performance, genre, and release information.
@@ -18,14 +18,25 @@ The analysis uses the following Python libraries:
 - Polars
 - Scikit-learn
 - Matplotlib
+- Pytest
 
 Install the required Python packages using:
 
-`pip install -r requirements.txt`
+```bash
+pip install -r requirements.txt
+```
 
 Run the analysis using:
 
-`python analysis.py`
+```bash
+python analysis.py
+```
+
+Run the tests using:
+
+```bash
+python -m pytest -v
+```
 
 ## Data Inspection
 
@@ -72,3 +83,31 @@ In addition to Pandas, Polars was used to load and inspect the same Spotify data
 The dataset was loaded using `pl.read_csv()` and the first several rows were inspected using `head()`. The data was then filtered to identify tracks with a high popularity category.
 
 The data was also grouped by genre using Polars, and the mean popularity was calculated for each genre and sorted from highest to lowest.
+
+## Testing
+
+Pytest is used to test the core functionality of the analysis.
+
+The unit tests check:
+
+- Data loading
+- High popularity filtering
+- Linear regression model training and prediction
+
+A system/integration test checks that the full workflow runs successfully, including data loading, grouping, model training, and prediction.
+
+Run all tests using:
+
+```bash
+python -m pytest -v
+```
+
+### Test Results
+
+All tests pass successfully.
+
+## Continuous Integration
+
+GitHub Actions is used to automatically run the tests on pushes and pull requests. The workflow installs the required dependencies and runs the pytest test suite using Python 3.12.
+
+The workflow can also be run manually using `workflow_dispatch`.
