@@ -108,7 +108,7 @@ python -m pytest -v
 
 All tests pass successfully.
 
-![Passing Tests](images/tests-passing.png)
+![Passing Tests](images/tests_passing.png)
 
 ## Continuous Integration
 
