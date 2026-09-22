@@ -2,7 +2,7 @@
 
 [![Python tests](https://github.com/annemariehorn/IDS706-Spotify-Data-Analysis/actions/workflows/test.yml/badge.svg)](https://github.com/annemariehorn/IDS706-Spotify-Data-Analysis/actions/workflows/test.yml)
 
-### *Slogan: "Refactor, Replay, Repeat."*
+### *Slogan: "Refactor, Replay, Repeat!"*
 
 ## Project Goal
 
