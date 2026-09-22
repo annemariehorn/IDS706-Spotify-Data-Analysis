@@ -114,6 +114,4 @@ All tests pass successfully.
 
 ## Continuous Integration
 
-GitHub Actions is used to automatically run the tests on pushes and pull requests. The workflow installs the required dependencies and runs the pytest test suite using Python 3.12.
-
-The workflow can also be run manually using `workflow_dispatch`.
+GitHub Actions automatically runs the tests whenever changes are pushed to the repository or a pull request is created. The workflow uses Python 3.12, installs the required dependencies, and runs the pytest test suite.
