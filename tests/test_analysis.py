@@ -1,6 +1,7 @@
 from analysis import (
-    load_data,
+    filter_high_energy,
     filter_high_popularity,
+    load_data,
     summarize_by_genre,
     train_linear_model,
 )
@@ -49,3 +50,24 @@ def test_full_workflow():
     assert not high_popularity.empty
     assert not genre_summary.empty
     assert len(predictions) == 5
+
+
+# Test edge case with no matching high-popularity tracks
+def test_filter_high_popularity_no_matches():
+    df = load_data(DATA_PATH)
+    df["popularity_category"] = "Low"
+
+    result = filter_high_popularity(df)
+
+    assert result.empty
+
+
+# Test exact high-energy threshold
+def test_filter_high_energy_threshold():
+    df = load_data(DATA_PATH)
+    df = df.head(1).copy()
+    df["energy"] = 0.8
+
+    result = filter_high_energy(df)
+
+    assert len(result) == 1

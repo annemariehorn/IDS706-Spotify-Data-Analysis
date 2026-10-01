@@ -3,3 +3,5 @@ polars
 scikit-learn
 matplotlib
 pytest
+black
+ruff
