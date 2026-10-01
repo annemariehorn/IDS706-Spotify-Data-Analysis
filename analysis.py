@@ -1,9 +1,9 @@
 # Import Libraries
 
+import matplotlib.pyplot as plt  # Import Matplotlib
 import pandas as pd
 import polars as pl
 from sklearn.linear_model import LinearRegression  # Import Linear Regression
-import matplotlib.pyplot as plt  # Import Matplotlib
 
 # FUNCTIONS
 
@@ -52,9 +52,20 @@ def train_linear_model(df, feature):
     return model
 
 
+# Create and save a scatter plot of energy vs. popularity
+def plot_energy_vs_popularity(df):
+    plt.scatter(df["energy"], df["popularity"], alpha=0.1, s=5)
+    plt.xlabel("Energy")
+    plt.ylabel("Popularity")
+    plt.title("Energy vs. Track Popularity")
+    plt.savefig("energy_vs_popularity.png")
+    plt.close()
+
+
 # MAIN ANALYSIS
 
-if __name__ == "__main__":
+
+def main():
 
     # Import the Dataset
 
@@ -147,16 +158,7 @@ if __name__ == "__main__":
 
     # Visualization
 
-    # Create a scatter plot between energy and popularity
-    plt.scatter(df["energy"], df["popularity"], alpha=0.1, s=5)
-
-    # Label the graph
-    plt.xlabel("Energy")
-    plt.ylabel("Popularity")
-    plt.title("Energy vs. Track Popularity")
-
-    # Display the graph
-    plt.show()
+    plot_energy_vs_popularity(df)
 
     # Optional Polars Analysis
 
@@ -182,3 +184,7 @@ if __name__ == "__main__":
 
     print("\nAverage popularity by genre:")
     print(genre_summary_polars)
+
+
+if __name__ == "__main__":
+    main()
