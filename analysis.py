@@ -85,7 +85,7 @@ def main():
     print("\n")
     print(df.describe())
 
-    print("\n\nCheck for missing values and duplicates (optional):\n")
+    print("\n\nCheck for missing values and duplicates:\n")
 
     # Count missing values in each column
     missing_values = df.isnull().sum()
@@ -97,6 +97,10 @@ def main():
 
     # Count duplicate rows
     print("Duplicate rows:", df.duplicated().sum())
+
+    # Inspect ranges for key numerical variables
+    print("\nRanges for key numerical variables:")
+    print(df[["popularity", "energy", "danceability"]].agg(["min", "max"]))
 
     # Basic Filtering and Grouping
 
@@ -128,6 +132,23 @@ def main():
     genre_summary = summarize_by_genre(df)
 
     print(genre_summary)
+
+    # Identify the genre with the highest average popularity
+    top_genre = genre_summary.index[0]
+    top_genre_popularity = genre_summary.iloc[0]["mean"]
+
+    print(
+        f"\nGenre with highest average popularity: "
+        f"{top_genre} ({top_genre_popularity:.2f})"
+    )
+
+    # Compare popularity of high-energy and lower-energy tracks
+    high_energy_mean = df[df["energy"] >= 0.8]["popularity"].mean()
+    lower_energy_mean = df[df["energy"] < 0.8]["popularity"].mean()
+
+    print("\nAverage popularity by energy group:")
+    print(f"High-energy tracks: {high_energy_mean:.2f}")
+    print(f"Lower-energy tracks: {lower_energy_mean:.2f}")
 
     # Explore a Machine Learning Algorithm
 
